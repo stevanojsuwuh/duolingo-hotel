@@ -71,6 +71,9 @@
             "production": {
               "browserTarget": "angular-pascal-9:build:production"
             },
+            "staging": {
+              "browserTarget": "angular-pascal-9:build:staging"
+            },
             "development": {
               "browserTarget": "angular-pascal-9:build:development"
             }
