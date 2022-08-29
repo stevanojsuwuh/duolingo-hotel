@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../pages/header/header.component';
-import { FooterComponent } from '../pages/footer/footer.component';
-import { ResourceComponent } from '../pages/resource/resource.component';
-import { NextStepComponent } from '../pages/next-step/next-step.component';
-import { RocketComponent } from '../pages/rocket/rocket.component';
+import { PortofolioComponent } from './portofolio/portofolio.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EducationComponent } from './education/education.component';
+import { SkillHighlightsComponent } from './skill-highlights/skill-highlights.component';
+import { ExperiencesComponent } from './experiences/experiences.component';
+import { SpecializationComponent } from './specialization/specialization.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const components = [
-  HeaderComponent,
-  FooterComponent,
-  ResourceComponent,
-  NextStepComponent,
-  RocketComponent
+  PortofolioComponent,
+  ProfileComponent,
+  EducationComponent,
+  SkillHighlightsComponent,
+  ExperiencesComponent,
+  SpecializationComponent
 ];
 
 @NgModule({
   declarations: [...components],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [...components]
 })

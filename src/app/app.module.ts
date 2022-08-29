@@ -3,17 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
-import { SampleSampleComponent } from './sample/sample-sample.component';
+import { SharedModule } from './shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SampleSampleComponent
   ],
   imports: [
     BrowserModule,
-    PagesModule
+    PagesModule,
+    SharedModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
