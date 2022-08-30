@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeModule } from './home/home.module';
 import { PagesComponent } from './pages.component';
 import { RouterModule } from '@angular/router';
-
-
+import { HomeRoutingModule } from './home/home-routing.module';
+import { ResumeModule } from './resume/resume.module';
+import { PagesRoutingModule } from './pages-routing.module';
 
 
 @NgModule({
@@ -15,8 +15,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    HomeModule,
-    RouterModule
+    RouterModule,
+    HomeRoutingModule,
+    ResumeModule,
+    PagesRoutingModule
   ],
   exports: [PagesComponent]
 })

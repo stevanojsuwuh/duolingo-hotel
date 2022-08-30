@@ -6,7 +6,7 @@ import { HomeComponent } from './home.component';
 import { ServiceComponent } from './service/service.component';
 import { PortofolioComponent } from './portofolio/portofolio.component';
 import { RouterModule } from '@angular/router';
-import { TodoComponent } from '../../todo/todo.component';
+import { TodoComponent } from '../todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +15,14 @@ import { TodoComponent } from '../../todo/todo.component';
     AboutComponent,
     ServiceComponent,
     PortofolioComponent,
-    TodoComponent,
+    TodoComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    HomeComponent]
+    HomeComponent
+  ]
 })
 export class HomeModule { }
