@@ -6,6 +6,8 @@ import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ResumeModule } from './resume/resume.module';
+import { SampleRouteModule } from './sample-route/sample-route.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ResumeModule } from './resume/resume.module';
     PagesModule,
     SharedModule,
     FontAwesomeModule,
-    ResumeModule
+    ResumeModule,
+    SampleRouteModule,
+    AppRoutingModule, // Untuk memunculkan routerLink
   ],
   providers: [],
   bootstrap: [AppComponent]
