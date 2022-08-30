@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeModule } from './home/home.module';
 import { PagesComponent } from './pages.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { PagesComponent } from './pages.component';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    HomeModule
+    HomeModule,
+    RouterModule
   ],
   exports: [PagesComponent]
 })

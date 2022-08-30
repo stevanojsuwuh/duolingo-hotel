@@ -18,16 +18,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+            <a class="nav-link active" aria-current="page" routerLink="" [ngxScrollTo]="'#home'">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">Tentang</a>
+            <a class="nav-link" routerLink="" [ngxScrollTo]="'#about'">Tentang</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#service">Layanan</a>
+            <a class="nav-link" routerLink="" [ngxScrollTo]="'#service'">Layanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#portofolio">Portofolio</a>
+            <a class="nav-link" routerLink="" [ngxScrollTo]="'#portofolio'">Portofolio</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -40,8 +40,8 @@
               Demo
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Portofolio</a></li>
-              <li><a class="dropdown-item" href="#">Todo</a></li>
+              <li><a class="dropdown-item" routerLink="/resume">Resume</a></li>
+              <li><a class="dropdown-item" routerLink="/todo">Todo</a></li>
             </ul>
           </li>
         </ul>
