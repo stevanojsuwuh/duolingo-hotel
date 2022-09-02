@@ -1,0 +1,19 @@
+.anime {
+    height: auto;
+    position: relative;
+    color: #000;
+    padding-top: 30px;
+}
+
+.anime-title::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #233d90;
+    width: 100px;
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+}

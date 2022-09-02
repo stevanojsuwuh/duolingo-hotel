@@ -1,0 +1,20 @@
+<section class="anime m-5">
+  <div class="container">
+    <div class="row">
+        <h1 class="anime-title text-center pt-5 pb-5">Anime List</h1>
+      <div *ngFor="let anime of animes" class="d-flex justify-content-center col-md-4">
+        <div class="card mb-5" style="width: 18rem">
+          <img src="{{ anime.cover }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ anime.name }}</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="{{ anime.cover }}" class="btn btn-primary">Watch {{anime.name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
