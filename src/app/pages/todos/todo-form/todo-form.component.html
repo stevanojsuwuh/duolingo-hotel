@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <form>
+        <form [formGroup]="todoForm" (ngSubmit)="onSubmitTodo()">
             <div class="input-group mb-3">
               <div class="input-group-text">
                 <input type="checkbox" class="form-check-input">
@@ -8,11 +8,11 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="todo-list"
-                aria-label="todo-list"
-                aria-describedby="basic-addon1"
+                placeholder="Todo"
+                aria-label="Todo"
+                formControlName="name"
               />
-              <button class="btn btn-outline-primary" type="submit">ADD</button>
+              <button class="btn btn-outline-primary" [disabled]="!todoForm.valid">ADD</button>
             </div>
         </form>
     </div>
