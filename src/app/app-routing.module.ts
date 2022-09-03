@@ -7,7 +7,6 @@ import { ComponentBComponent } from './sample-route/component-b/component-b.comp
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { HomeComponent } from './pages/home/home.component';
-import { TodoComponent } from './pages/todo/todo.component';
 
 
 // Konsep Eager Load
