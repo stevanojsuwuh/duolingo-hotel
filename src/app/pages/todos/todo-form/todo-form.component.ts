@@ -8,7 +8,7 @@ import { Todo } from '../model/todo.model';
   styleUrls: ['./todo-form.component.scss']
 })
 export class TodoFormComponent implements OnInit {
-  // @Input() todo!: Todo;
+  @Input() todo!: Todo;
   @Output() saveTodo: EventEmitter<Todo> = new EventEmitter<Todo>();
 
   todoForm: FormGroup = new FormGroup({
