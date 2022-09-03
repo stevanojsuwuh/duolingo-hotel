@@ -13,7 +13,8 @@ import { TodoComponent } from './pages/todo/todo.component';
 // Konsep Eager Load
 const routes: Routes = [ // sets up routes constant where you define your routes
   // for lazy load
-  { path: '', loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule) },
+  // { path: '', loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule) },
+  { path: 'component-a', component: ComponentAComponent },
   // { path: '',   redirectTo: '/component-a', pathMatch: 'full' }, // redirect to `component-a`
   { path: '**', component: NotFoundComponent }, // wildcard route for a 404 page
 ] 

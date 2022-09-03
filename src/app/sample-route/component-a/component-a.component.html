@@ -9,4 +9,7 @@
     </div>
 </div>
 
+<h2>{{counter}}</h2>
+<app-child-a [image]="image" (result)="setCounter($event)"></app-child-a>
+
 <router-outlet></router-outlet>

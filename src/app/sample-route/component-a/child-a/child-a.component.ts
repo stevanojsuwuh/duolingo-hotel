@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,6 +7,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./child-a.component.scss']
 })
 export class ChildAComponent implements OnInit {
+
+  @Input() image!: any;
+  @Output() result = new EventEmitter<number>();
+  counter: number = 0;
+  increment(): void {
+    this.counter++;
+    this.result.emit(this.counter);
+  }
 
   name: string = '';
 
