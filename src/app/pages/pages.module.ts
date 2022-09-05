@@ -6,13 +6,11 @@ import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { ResumeModule } from './resume/resume.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { AnimeComponent } from './anime/anime.component';
 
 
 @NgModule({
   declarations: [
     PagesComponent,
-    AnimeComponent
   ],
   imports: [
     CommonModule,
