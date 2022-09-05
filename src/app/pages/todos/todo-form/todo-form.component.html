@@ -3,7 +3,7 @@
         <form [formGroup]="todoForm" (ngSubmit)="onSubmitTodo()">
             <div class="input-group mb-3">
               <div class="input-group-text">
-                <input type="checkbox" class="form-check-input">
+                <input type="checkbox" class="form-check-input" formControlName="isDone">
               </div>
               <input
                 type="text"
