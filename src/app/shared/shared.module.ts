@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
-import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to'
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { ScrollDirective } from './directives/scroll/scroll.directive';
+import { BsButtonDirective } from './directives/bs-button/bs-button.directive';
+import { ValidationMessageComponent } from './components/validation-message/validation-message.component';
+import { StringUtil } from './utils/string.util';
 
 const components = [
-  FooterComponent,
   HeaderComponent,
+  FooterComponent,
   NotFoundComponent,
-
+  ScrollDirective,
+  BsButtonDirective,
+  ValidationMessageComponent,
 ]
 
 @NgModule({
@@ -20,6 +26,9 @@ const components = [
     RouterModule,
     ScrollToModule.forRoot()
   ],
-  exports: [...components]
+  exports: [...components],
+  providers: [
+    StringUtil
+  ]
 })
 export class SharedModule { }
