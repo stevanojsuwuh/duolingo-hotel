@@ -1,17 +1,22 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { map } from 'rxjs';
 import Swal from 'sweetalert2';
 import { TodoField } from '../model/todo-field.model';
 import { Todo } from '../model/todo.model';
+import { TodosService } from '../services/todos.service';
+
+const TODO_URL = '/demo/todos';
 
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.scss']
 })
-export class TodoFormComponent implements OnInit, OnChanges {
-  @Input() todo?: Todo;
-  @Output() todoChange: EventEmitter<Todo> = new EventEmitter<Todo>();
+export class TodoFormComponent implements OnInit {
+  todo?: Todo;
+  id?: number;
 
   field: typeof TodoField = TodoField;
 
@@ -20,29 +25,44 @@ export class TodoFormComponent implements OnInit, OnChanges {
     [TodoField.NAME]: new FormControl(null, [Validators.required, Validators.minLength(4)]),
     [TodoField.IS_DONE]: new FormControl(false),
   })
-  constructor() { }
-
-  ngOnChanges(): void {
-    if(this.todo){
-      this.todoForm.setValue(this.todo);
-    }
-  }
+  constructor(
+    private readonly todoService : TodosService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
+  ) { }
 
   ngOnInit(): void {
-
+    this.route.params.pipe(
+      map((params: Params) => {
+        return params['id']? +params['id'] : null;
+      })
+    ).subscribe((id: any) => {
+      this.todo = this.todoService.get(id);
+      this.id = id; // pengecekan sweetAlert2
+      this.setFormValue();
+    })
   }
-
+  
   onSubmitTodo(): void {
-    if(this.todoForm.valid){
-      this.todoChange.emit(this.todoForm.value);
+    const todo: Todo = this.todoForm.value;
+    this.todoService.save(todo);
+    if(this.id){
       Swal.fire({
         icon: 'success',
-        title: `Todo berhasil ditambahkan`,
+        title: `Todo ${todo.name} telah diubah`,
+        showConfirmButton: false,
+        timer: 1500
+      })
+    } else {
+      Swal.fire({
+        icon: 'success',
+        title: `Todo ${todo.name} telah ditambah`,
         showConfirmButton: false,
         timer: 1500
       })
     }
     this.todoForm.reset();
+    this.router.navigateByUrl(TODO_URL);
   }
 
   setFormValue(): void {
