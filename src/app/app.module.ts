@@ -23,7 +23,7 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
     ResumeModule,
     SampleRouteModule,
     AppRoutingModule, // Untuk memunculkan routerLink
-    PagesRoutingModule
+    PagesRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
