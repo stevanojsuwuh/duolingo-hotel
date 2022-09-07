@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class StringUtil {
   public format(text: string, ...params: any[]): string | undefined {
     const args = Array.prototype.slice.call(params);

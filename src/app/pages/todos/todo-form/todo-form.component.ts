@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { TodoField } from '../model/todo-field.model';
 import { Todo } from '../model/todo.model';
 
@@ -32,7 +33,15 @@ export class TodoFormComponent implements OnInit, OnChanges {
   }
 
   onSubmitTodo(): void {
-    this.todoChange.emit(this.todoForm.value);
+    if(this.todoForm.valid){
+      this.todoChange.emit(this.todoForm.value);
+      Swal.fire({
+        icon: 'success',
+        title: `Todo berhasil ditambahkan`,
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
     this.todoForm.reset();
   }
 

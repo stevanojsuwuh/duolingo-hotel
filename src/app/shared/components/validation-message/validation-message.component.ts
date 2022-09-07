@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { VALIDATION_MESSAGES as messages } from '../../messages/validation.message';
-import { StringUtil } from '../../utils/string.util';
+import { StringUtil } from '../../services/string-format.service';
 
 @Component({
   selector: 'app-validation-message',
