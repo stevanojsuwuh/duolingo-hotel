@@ -9,6 +9,12 @@
     </div>
 </div>
 
+<app-child-a>
+    Child AA
+    <ng-container punyaTagP>Child dari Tag P</ng-container>
+    <ng-container span>Child dari span</ng-container>
+</app-child-a>
+
 <h2>{{counter}}</h2>
 <app-child-a [image]="image" (result)="setCounter($event)"></app-child-a>
 
