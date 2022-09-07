@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { ResumeModule } from './resume/resume.module';
 import { PagesRoutingModule } from './pages-routing.module';
+import { SampleModule } from './sample/sample.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PagesRoutingModule } from './pages-routing.module';
     RouterModule,
     HomeRoutingModule,
     ResumeModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    SampleModule
   ],
   exports: [PagesComponent]
 })

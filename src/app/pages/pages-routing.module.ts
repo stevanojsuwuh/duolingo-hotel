@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'demo/resume', component: ResumeComponent },
   { path: 'demo/anime', loadChildren: () => import('./anime/anime.module').then((m) => m.AnimeModule) },
   { path: 'demo/todos', loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule) },
+  { path: 'demo/sample', loadChildren: () => import('./sample/sample.module').then(m => m.SampleModule) },
   { path: '**', component: NotFoundComponent },
 ]
 

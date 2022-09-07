@@ -6,9 +6,10 @@ import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ResumeModule } from './pages/resume/resume.module';
-import { SampleRouteModule } from './sample-route/sample-route.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
+import { SampleRoutingModule } from './pages/sample/sample-routing.module';
+import { SampleModule } from './pages/sample/sample.module';
 
 
 @NgModule({
@@ -21,9 +22,10 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
     SharedModule,
     FontAwesomeModule,
     ResumeModule,
-    SampleRouteModule,
     AppRoutingModule, // Untuk memunculkan routerLink
     PagesRoutingModule,
+    SampleRoutingModule,
+    SampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
