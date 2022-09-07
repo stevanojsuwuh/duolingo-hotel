@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { format } from 'date-fns';
+import { ca, fr, id, ja } from 'date-fns/locale';
 import Swal from 'sweetalert2';
 import { Todo } from './model/todo.model';
 
@@ -12,6 +14,9 @@ export class TodosComponent implements OnInit {
 
   todos: Todo[] = [];
   todoValue?: Todo;
+  // today: Date = new Date();
+  today!: string;
+  locale: Locale = ja;
 
   //Two way, kita bisa memanfaatkan getter and setter
   get todo(): Todo {
@@ -24,6 +29,7 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTodos();
+    
   }
 
   loadTodos(): void {

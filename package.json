@@ -28,6 +28,7 @@
     "@nicky-lenaers/ngx-scroll-to": "^9.0.0",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
+    "date-fns": "^2.29.2",
     "firebase": "^9.9.4",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.4.29",
