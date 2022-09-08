@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 import { SampleRoutingModule } from './pages/sample/sample-routing.module';
 import { SampleModule } from './pages/sample/sample.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthRoutingModule } from './auth/auth-routing.module';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { SampleModule } from './pages/sample/sample.module';
     AppRoutingModule, // Untuk memunculkan routerLink
     PagesRoutingModule,
     SampleRoutingModule,
-    SampleModule
+    SampleModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

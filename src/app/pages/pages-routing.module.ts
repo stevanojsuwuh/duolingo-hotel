@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'demo/anime', loadChildren: () => import('./anime/anime.module').then((m) => m.AnimeModule) },
   { path: 'demo/todos', loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule) },
   { path: 'demo/sample', loadChildren: () => import('./sample/sample.module').then(m => m.SampleModule) },
-  { path: '**', component: NotFoundComponent },
 ]
 
 // configures NgModule imports and exports

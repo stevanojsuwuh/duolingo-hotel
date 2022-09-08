@@ -1,4 +1,4 @@
-<header id="header" class="fixed-top" appScroll>
+<header id="header" class="fixed-top ">
   <nav class="navbar navbar-dark navbar-expand-lg bg-navbar">
     <div class="container">
       <h1 class="header-logo">
@@ -43,11 +43,9 @@
               >Portofolio</a
             >
           </li>
-          <ng-container *ngIf="!isLoggedIn; else elseTemplate">
+          <ng-container *ngIf="!isLoggedIn(); else elseTemplate">
             <li class="nav-item">
-              <a class="nav-link" (click)="login()" href="javascript:void(0);"
-                >Login</a
-              >
+              <a class="nav-link" routerLink="/auth/login">Login</a>
             </li>
           </ng-container>
           <ng-template #elseTemplate>
@@ -77,8 +75,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="logout()" href="javascript:void(0);"
-                >Logout</a
+              <a class="nav-link" routerLink="/auth/logout">Logout</a>
               >
             </li>
           </ng-template>
