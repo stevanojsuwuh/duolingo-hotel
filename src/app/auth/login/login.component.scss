@@ -5,33 +5,34 @@
     margin-top: 12%;
     margin-bottom: 8%;
   }
-  
+
   .container {
     width:450px;
     display: flex;
     flex-direction: column;
+    z-index: 5000;
   }
-  
+
   .card {
     border-style: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
-  
+
   .card-title h3 {
     text-align: center;
     margin-top: 20px;
     font-size: 1.5rem;
   }
-  
+
   .btn-login {
     margin-top: 20px;
   }
-  
+
   .btn-login-footer {
     text-align: center;
-    color: gray;
+    color: rgb(146, 125, 125);
   }
-  
+
   .btn-login-footer a {
     text-decoration: none;
   }

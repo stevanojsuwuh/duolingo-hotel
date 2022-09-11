@@ -17,16 +17,24 @@ export class TodoListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loadTodo();
+    this.loadTodo()
   }
 
   loadTodo(): void {
-    this.todos = this.todoService.list()
+    this.todoService.list().subscribe({
+      next: (todos: Todo[]) => {
+        this.todos = todos;
+      }
+    });
   }
 
-  onCheckTodo(todo: Todo): void {    
-    this.todoService.checkedTodo(todo);
-    // this.toggleTodo.emit(); // Kalo ngga ada parameternya, bisa langsung emit aja
+  onCheckTodo(todo: Todo): void {
+    this.todoService.checkedTodo(todo)
+    .subscribe({
+      next: () => {
+        this.loadTodo();
+      }
+    });
   }
 
   onSelectTodo(todo: Todo): void {
@@ -34,27 +42,26 @@ export class TodoListComponent implements OnInit {
   }
 
   onDeleteTodo(todo: Todo): void {
-    if (!todo.isDone) {
+    if (todo.isDone) {
       Swal.fire({
-        title: `Beneran ${todo.name} mau dihapus?`,
-        text: 'Kamu ngga bisa membatalkan ini!',
+        icon: 'error',
+        title: 'Oops...',
+        text: "Can't delete todo",
+      });
+    } else {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Ya, hapus aja!',
+        confirmButtonText: 'Yes, delete it!',
       }).then((result) => {
         if (result.isConfirmed) {
-          this.todoService.remove(todo.id);
-          Swal.fire('Dihapus!', `${todo.name} sudah dihapus`, 'success');
+          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+          this.todoService.remove(todo.id).subscribe();
         }
-      });
-    } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Eh...',
-        text: 'Udah selesai, jangan dihapus!',
-        footer: '<a href="">Kenapa ini?</a>',
       });
     }
   }

@@ -34,18 +34,21 @@ export class TodoFormComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.pipe(
       map((params: Params) => {
-        return params['id']? +params['id'] : null;
+        return params['id'] ? +params['id'] : null;
       })
-    ).subscribe((id: any) => {
-      this.todo = this.todoService.get(id);
+    )
+    .subscribe((id: any) => {
+      this.todoService.get(id).subscribe({
+        next: (todo) => (this.todo = todo),
+      });
       this.id = id; // pengecekan sweetAlert2
       this.setFormValue();
-    })
+    });
   }
-  
+
   onSubmitTodo(): void {
     const todo: Todo = this.todoForm.value;
-    this.todoService.save(todo);
+    this.todoService.save(todo).subscribe()
     if(this.id){
       Swal.fire({
         icon: 'success',
@@ -67,26 +70,18 @@ export class TodoFormComponent implements OnInit {
 
   setFormValue(): void {
     if(this.todo){
-      // Cara 1
       this.todoForm.get(TodoField.ID)?.setValue(this.todo.id);
       this.todoForm.get(TodoField.NAME)?.setValue(this.todo.name);
       this.todoForm.get(TodoField.IS_DONE)?.setValue(this.todo.isDone);
-
-      // Cara 2
-      // this.todoForm.setValue(this.todo);
     } else if(this.todoForm){
       this.todoForm.reset();
     }
   }
 
-  // Validation Field
+
   isValid(controlName: TodoField){
     const control: AbstractControl | null = this.todoForm.get(controlName);
     let classCss: string = '';
-    // touched -> sudah di klik
-    // dirty -> sudah pernah terisi
-    // invalid -> status input invalid atau tidak
-    // valid -> status input valid atau tidak
     if(control && control.touched && control.invalid){
       classCss = 'is-invalid';
     } else if(control && control.valid){

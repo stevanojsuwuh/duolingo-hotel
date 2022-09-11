@@ -1,0 +1,33 @@
+<div class="container" style=" min-height: 100vh;">
+<table class="table table-striped table-hover" style="margin-top: 100px;">
+  <thead>
+    <tr>
+      <th scope="col">Booking ID</th>
+      <th scope="col">Nama Pemesan</th>
+      <th scope="col">Nama Kamar</th>
+      <th scope="col">Durasi Menginap</th>
+      <th scope="col">Total Biaya</th>
+      <th scope="col">Jumlah Tahu</th>
+      <th scope="col">Status Pemesanan</th>
+      <th scope="col">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let item of bookings">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.reservee.name}}</td>
+      <td>{{item.roomNumber}}</td>
+      <td>{{item.duration}}</td>
+      <td>{{item.duration*nightlyfee}}</td>
+      <td>{{item.guestCount}}</td>
+      <td>{{item.status}}</td>
+      <td class="d-flex">
+        <button class="btn btn-outline-danger btn-sm" (click)="onCheckIn(item.id)">check in</button>
+        <button class="btn btn-outline-success btn-sm" (click)="onCheckOut(item.id)">check out</button>
+        <button class="btn btn-outline-warning btn-sm" (click)="onReserve(item)">edit</button>
+        <button class="btn btn-outline-info btn-sm" (click)="onDeleteReservation(item.id)">hapus</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

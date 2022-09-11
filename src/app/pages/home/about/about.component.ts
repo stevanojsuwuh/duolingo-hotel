@@ -12,4 +12,13 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  panelClick(event: any): void {
+    const panels = document.querySelectorAll('.panel')
+    panels.forEach(panel => {
+      panel.classList.remove('active')
+  })
+  const elemen: Element = event.target as Element;
+  elemen.classList.add('active')
+  }
+
 }

@@ -3,7 +3,7 @@
     <div class="container">
       <h1 class="header-logo">
         <a class="navbar-brand" href="#"
-          ><i class="bi bi-code-slash"></i> PascalApp</a
+          ><i class="bi bi-house"></i>DUOLINGO HOTEL</a
         >
       </h1>
       <button
@@ -38,45 +38,20 @@
               >Layanan</a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="" [ngxScrollTo]="'#portofolio'"
-              >Portofolio</a
-            >
-          </li>
           <ng-container *ngIf="!isLoggedIn(); else elseTemplate">
             <li class="nav-item">
               <a class="nav-link" routerLink="/auth/login">Login</a>
             </li>
           </ng-container>
           <ng-template #elseTemplate>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Demo
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" routerLink="/demo/resume">Resume</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" routerLink="/demo/todos">Todo</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" routerLink="/demo/anime">Anime</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" routerLink="/demo/sample">Sample</a>
-                </li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="booking/bookedlist">Book List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="booking/bookingform">Book Form</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/auth/logout">Logout</a>
-              >
             </li>
           </ng-template>
         </ul>

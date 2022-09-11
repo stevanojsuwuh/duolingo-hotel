@@ -1,0 +1,44 @@
+<section id="room" class="room sect-pt4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="room-title">
+          <h2>ROOMS YOU CAN BOOKED</h2>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let room of roomShow">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="anime-card">
+            <a href="">
+              <div class="anime-img">
+                <img src="{{ room.cover }}" class="img-fluid" alt="Work 1" />
+              </div>
+            </a>
+            <div class="room-content text-center">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h2>{{ room.name }}</h2>
+                  <p>{{ room.description }}</p>
+                  <h3>{{ room.price }}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-sm-12 text-center mb-3">
+        <div class="spinner-border" role="status" *ngIf="loading">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="col-sm-12 text-center">
+        <button type="button" class="btn btn-outline-dark" (click)="loadMore()">
+          Muat Lebih
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -4,9 +4,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PagesComponent } from './pages.component';
 import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home/home-routing.module';
-import { ResumeModule } from './resume/resume.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { SampleModule } from './sample/sample.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -18,9 +17,8 @@ import { SampleModule } from './sample/sample.module';
     FontAwesomeModule,
     RouterModule,
     HomeRoutingModule,
-    ResumeModule,
     PagesRoutingModule,
-    SampleModule
+    SharedModule
   ],
   exports: [PagesComponent]
 })
